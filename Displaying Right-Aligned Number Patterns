@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int height;
+
+    // Prompt the user to enter the height
+    printf("Height?\n\n");
+    scanf("%d", &height);
+
+    // Outer loop for rows
+    for (int i = 1; i <= height; i++) {
+        // Inner loop for columns
+        for (int j = 1; j <= height - i; j++) {
+            printf(" "); // Print spaces for alignment
+        }
+        for (int j = 1; j <= i; j++) {
+            printf("%d", i); // Print the number i for i times
+        }
+        printf("\n"); // Move to the next line after each row
+    }
+
+    return 0;
+}
