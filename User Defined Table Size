@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main (void)
+{
+    int w, h;
+    
+    printf("Width?\n");
+    printf("Height?\n");
+    scanf("%d", &w);
+    scanf("%d", &h);
+    
+    for ( int i = 1; i <= h; i++ ) {
+        
+        for ( int p = 1; p <= w; p++) 
+        {
+         printf("%4d", i * p);   
+        }
+        
+        printf("\n");
+    }
+}
