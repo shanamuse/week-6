@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    char input;
+
+
+    while (1) {
+        scanf(" %c", &input);
+
+        if (input == '~') {
+            printf("Type any key (~ to quit)...\n");
+            printf("> That was something else!\n\n");
+            printf("All done! Goodbye!\n");
+            break;
+        } else if (input >= '0' && input <= '9') {
+            printf("Type any key (~ to quit)...\n");
+            printf("> That was a digit.\n\n");
+        } else if (input >= 'a' && input <= 'z') {
+            printf("Type any key (~ to quit)...\n");
+            printf("> That was a lowercase letter.\n\n");
+        } else if (input >= 'A' && input <= 'Z') {
+            printf("Type any key (~ to quit)...\n");
+            printf("> That was a uppercase letter.\n\n");
+        } else {
+            printf("Type any key (~ to quit)...\n");
+            printf("> That was something else!\n\n");
+        }
+    }
+
+    return 0;
+}
