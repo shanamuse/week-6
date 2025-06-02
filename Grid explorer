@@ -1,0 +1,45 @@
+#include <stdio.h>
+int main (void)
+{
+    int x = 0;
+    int y = 0;
+    char input;
+
+
+    printf("The player starts at (0, 0)...\n");
+
+    while (1) {
+        
+        printf("Player at (%d, %d) - move N,S,E,W (q to quit)?\n", x, y);
+        scanf(" %c", &input);
+        
+     if (input == 'q') {
+        printf("The player ends at (%d, %d)\n", x, y);
+        break;    
+    }
+    
+     switch (input) {
+            case 'N':
+            case 'n':
+                y++;
+                break;
+            case 'S':
+            case 's':
+                y--;
+                break;
+            case 'E':
+            case 'e':
+                x++;
+                break;
+            case 'W':
+            case 'w':
+                x--;
+                break;
+            default:
+                printf("\nInvalid input. Please enter N, S, E, W, or q to quit.\n");
+        }
+        
+    }
+    
+    return 0;
+}
