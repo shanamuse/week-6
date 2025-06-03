@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    char word[100];
+    int count = 0;
+
+    printf("Input a word:\n");
+    scanf("%s", word);
+
+    while (word[count] != '\0') {
+        count++;
+    }
+
+    printf("%s is %d characters in length.\n", word, count);
+
+    return 0;
+}
