@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int num, highest = -2147483648; 
+    int count = 0;
+
+    while (1) {
+        printf("Enter a number (0 to quit):\n");
+        scanf("%d", &num);
+
+        if (num == 0) {
+            break;
+        }
+
+        if (num > highest) {
+            highest = num;
+        }
+
+        count++;
+    }
+
+    if (count == 0) {
+        printf("\nNo numbers entered!\n");
+    } else {
+        printf("\nThe highest number was %d.\n", highest);
+    }
+
+    return 0;
+}
