@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    char firstName[50];
+    int isValid;
+
+    do {
+        printf("What is your first name?\n");
+        scanf("%s", firstName);
+
+        isValid = 1;
+
+        if (!(firstName[0] >= 'A' && firstName[0] <= 'Z')) {
+            isValid = 0;
+        } else {
+            for (int i = 1; firstName[i] != '\0'; i++) {
+                if (!(firstName[i] >= 'a' && firstName[i] <= 'z')) {
+                    isValid = 0;
+                    break;
+                }
+            }
+        }
+
+        if (!isValid) {
+            printf("\nInvalid input!\n");
+        }
+
+    } while (!isValid);
+
+    printf("\n%s is a valid first name.\n", firstName);
+
+    return 0;
+}
