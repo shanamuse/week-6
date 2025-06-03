@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+int main() {
+    int n, row, space, star;
+
+    printf(">\n");
+    scanf("%d", &n);
+
+    if (n == 0) {
+        printf("Too small!\n");
+        return 0;
+    }
+
+    if (n == 1) {
+        printf("*\n");
+        return 0;
+    }
+
+    if (n == 2) {
+        printf("*\n*\n");
+        return 0;
+    }
+
+    int half = n / 2;
+
+    if (n % 2 == 0) { 
+        for (row = 1; row < half; row++) {
+            for (space = 1; space <= half - row; space++) printf(" ");
+            for (star = 1; star <= row * 2 - 1; star++) printf("*");
+            printf("\n");
+        }
+
+        for (row = 0; row < 2; row++) {
+            for (star = 1; star <= n - 1; star++) printf("*");
+            printf("\n");
+        }
+
+        for (row = half - 1; row >= 1; row--) {
+            for (space = 1; space <= half - row; space++) printf(" ");
+            for (star = 1; star <= row * 2 - 1; star++) printf("*");
+            printf("\n");
+        }
+    }
+
+    else { 
+        for (row = 1; row <= half; row++) {
+            for (space = 1; space <= half - row + 1; space++) printf(" ");
+            for (star = 1; star <= row * 2 - 1; star++) printf("*");
+            printf("\n");
+        }
+        
+        for (star = 1; star <= n; star++) printf("*");
+        printf("\n");
+
+        for (row = half; row >= 1; row--) {
+            for (space = 1; space <= half - row + 1; space++) printf(" ");
+            for (star = 1; star <= row * 2 - 1; star++) printf("*");
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
