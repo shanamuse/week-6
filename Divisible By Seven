@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int num, count = 0;
+    
+    printf("Enter a whole number:\n");
+    scanf("%d", &num);
+
+    if (num > 0) {
+        for (int i = 1; i <= num; i++) {
+            if (i % 7 == 0) {
+                count++;
+            }
+        }
+    } else {
+        for (int i = 1; i >= num; i--) {
+            if (i % 7 == 0) {
+                count++;
+            }
+        }
+    }
+
+    printf("%d numbers between 1 and %d are\n", count, num);
+    printf("divisible by seven with no remainder.\n");
+
+    return 0;
+}
