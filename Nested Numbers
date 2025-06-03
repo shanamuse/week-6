@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int height;
+
+    printf("Height?\n\n");
+    scanf("%d", &height);
+
+    for (int row = 1; row <= height; row++) {
+        for (int col = 1; col <= row; col++) {
+            printf("%d", row);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
