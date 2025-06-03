@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main() {
+    char word1[100], word2[100];
+    int freq1[26] = {0}, freq2[26] = {0};
+    int i;
+
+    printf("Word 1:\n");
+    scanf("%s", word1);
+
+    printf("Word 2:\n");
+    scanf("%s", word2);
+
+    for (i = 0; word1[i] != '\0'; i++) {
+        char c = word1[i];
+        if (c >= 'A' && c <= 'Z') {
+            c = c + ('a' - 'A'); 
+        }
+        if (c >= 'a' && c <= 'z') {
+            freq1[c - 'a']++;
+        }
+    }
+
+    for (i = 0; word2[i] != '\0'; i++) {
+        char c = word2[i];
+        if (c >= 'A' && c <= 'Z') {
+            c = c + ('a' - 'A');
+        }
+        if (c >= 'a' && c <= 'z') {
+            freq2[c - 'a']++;
+        }
+    }
+
+    int match = 1;
+    for (i = 0; i < 26; i++) {
+        if (freq1[i] != freq2[i]) {
+            match = 0;
+            break;
+        }
+    }
+
+    printf("\n"); 
+
+    if (match) {
+        printf("YES! %s and %s\n", word1, word2);
+    } else {
+        printf("NO!\n");
+    }
+
+    return 0;
+}
